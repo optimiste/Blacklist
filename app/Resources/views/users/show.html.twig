@@ -6,19 +6,15 @@
     <table>
         <tbody>
             <tr>
-                <th>Username</th>
+                <th>Vartotojo vardas</th>
                 <td>{{ user.username }}</td>
             </tr>
             <tr>
-                <th>Password</th>
-                <td>{{ user.password }}</td>
-            </tr>
-            <tr>
-                <th>Role</th>
+                <th>Rolė</th>
                 <td>{{ user.role }}</td>
             </tr>
             <tr>
-                <th>Email</th>
+                <th>e-pašto adresas</th>
                 <td>{{ user.email }}</td>
             </tr>
         </tbody>
@@ -26,10 +22,10 @@
 
     <ul>
         <li>
-            <a href="{{ path('users_index') }}">Back to the list</a>
+            <a href="{{ path('users_index') }}">Grįžti į sąrašą</a>
         </li>
         <li>
-            <a href="{{ path('users_edit', { 'id': user.id }) }}">Edit</a>
+            <a href="{{ path('users_edit', { 'id': user.id }) }}">Redaguoti</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

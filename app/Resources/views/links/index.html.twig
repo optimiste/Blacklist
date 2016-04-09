@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Links list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Active</th>
+                <th>Link</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for link in links %}
+            <tr>
+                <td><a href="{{ path('links_show', { 'id': link.id }) }}">{{ link.title }}</a></td>
+                <td>{{ link.description }}</td>
+                <td>{% if link.active %}Yes{% else %}No{% endif %}</td>
+                <td>{{ link.link }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('links_show', { 'id': link.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('links_edit', { 'id': link.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('links_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

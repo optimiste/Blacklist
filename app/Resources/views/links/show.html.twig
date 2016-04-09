@@ -1,24 +1,24 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Links</h1>
+    <h1>URL</h1>
 
     <table>
         <tbody>
             <tr>
-                <th>Title</th>
+                <th>Pavadinimas</th>
                 <td>{{ link.title }}</td>
             </tr>
             <tr>
-                <th>Description</th>
+                <th>Aprašymas</th>
                 <td>{{ link.description }}</td>
             </tr>
             <tr>
-                <th>Active</th>
+                <th>Aktyvus</th>
                 <td>{% if link.active %}Yes{% else %}No{% endif %}</td>
             </tr>
             <tr>
-                <th>Link</th>
+                <th>URL</th>
                 <td>{{ link.link }}</td>
             </tr>
         </tbody>
@@ -26,10 +26,10 @@
 
     <ul>
         <li>
-            <a href="{{ path('links_index') }}">Back to the list</a>
+            <a href="{{ path('links_index') }}">Grįžti į sąrašą</a>
         </li>
         <li>
-            <a href="{{ path('links_edit', { 'id': link.id }) }}">Edit</a>
+            <a href="{{ path('links_edit', { 'id': link.id }) }}">Redaguoti</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

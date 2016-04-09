@@ -1,16 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Links list</h1>
+    <h1>URL sąrašas</h1>
 
     <table>
         <thead>
             <tr>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Active</th>
-                <th>Link</th>
-                <th>Actions</th>
+                <th>Pavadinimas</th>
+                <th>Apibūdinimas</th>
+                <th>Aktyvus</th>
+                <th>URL</th>
+                <th>Veiksmai</th>
             </tr>
         </thead>
         <tbody>
@@ -23,10 +23,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('links_show', { 'id': link.id }) }}">show</a>
+                            <a href="{{ path('links_show', { 'id': link.id }) }}">rodyti</a>
                         </li>
                         <li>
-                            <a href="{{ path('links_edit', { 'id': link.id }) }}">edit</a>
+                            <a href="{{ path('links_edit', { 'id': link.id }) }}">redaguoti</a>
                         </li>
                     </ul>
                 </td>
@@ -37,7 +37,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('links_new') }}">Create a new entry</a>
+            <a href="{{ path('links_new') }}">Sukurti naują</a>
         </li>
     </ul>
 {% endblock %}
